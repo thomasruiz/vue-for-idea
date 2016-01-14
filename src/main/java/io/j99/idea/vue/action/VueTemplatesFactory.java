@@ -7,7 +7,6 @@ import com.intellij.psi.PsiDirectory;
 import com.intellij.psi.PsiFile;
 import com.intellij.psi.PsiFileFactory;
 import com.intellij.util.IncorrectOperationException;
-import io.j99.idea.vue.VueFileType;
 import org.jetbrains.annotations.NonNls;
 
 import java.util.Properties;

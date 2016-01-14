@@ -1,6 +1,5 @@
 package io.j99.idea.vue
 
-import com.intellij.lang.html.HTMLLanguage
 import com.intellij.openapi.fileTypes.LanguageFileType
 import org.jetbrains.annotations.NonNls
 import javax.swing.Icon
@@ -8,7 +7,7 @@ import javax.swing.Icon
 /**
  * Created by android on 15-12-25.
  */
-class VueFileType : LanguageFileType(HTMLLanguage.INSTANCE) {
+    class VueFileType : LanguageFileType(VueLanguage()) {
     override fun getName(): String {
         return VueBundle.message("vue.filetype.name")
     }
