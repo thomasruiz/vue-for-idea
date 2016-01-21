@@ -19,12 +19,12 @@ import static com.intellij.patterns.PlatformPatterns.psiElement;
  * Created by apple on 16/1/21.
  */
 public class VueInjector implements MultiHostInjector {
-    private static final PsiElementPattern.Capture<VueScriptBody> JS_ELEMENT_PATTERN =
-            psiElement(VueScriptBody.class);
-    private static final PsiElementPattern.Capture<VueTemplateBody> HTML_ELEMENT_PATTERN =
-            psiElement(VueTemplateBody.class);
-    private static final PsiElementPattern.Capture<VueStyleBody> STYLE_ELEMENT_PATTERN =
-            psiElement(VueStyleBody.class);
+    private static final PsiElementPattern.Capture<VueScriptCode> JS_ELEMENT_PATTERN =
+            psiElement(VueScriptCode.class);
+    private static final PsiElementPattern.Capture<VueTemplateCode> HTML_ELEMENT_PATTERN =
+            psiElement(VueTemplateCode.class);
+    private static final PsiElementPattern.Capture<VueStyleCode> STYLE_ELEMENT_PATTERN =
+            psiElement(VueStyleCode.class);
     @Override
     public void getLanguagesToInject(@NotNull MultiHostRegistrar registrar, @NotNull PsiElement host) {
         if(JS_ELEMENT_PATTERN.accepts(host)){
@@ -50,6 +50,6 @@ public class VueInjector implements MultiHostInjector {
     @NotNull
     @Override
     public List<? extends Class<? extends PsiElement>> elementsToInjectIn() {
-        return Arrays.asList(VueTemplateBody.class,VueStyleBody.class,VueScriptBody.class);
+        return Arrays.asList(VueScriptCode.class,VueTemplateCode.class,VueStyleCode.class);
     }
 }

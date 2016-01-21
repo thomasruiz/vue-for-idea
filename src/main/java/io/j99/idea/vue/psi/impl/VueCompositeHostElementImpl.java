@@ -22,12 +22,12 @@ public abstract class VueCompositeHostElementImpl extends ASTWrapperPsiElement i
         return true;
     }
     private PsiElement getCodeBlock(){
-        PsiElement body = findChildByType(VueTypes.TEMPLATE_BODY);
+        PsiElement body = findChildByType(VueTypes.TEMPLATE_CODE);
         if(body==null){
-            body = findChildByType(VueTypes.STYLE_BODY);
+            body = findChildByType(VueTypes.STYLE_CODE);
         }
         if(body==null){
-            body = findChildByType(VueTypes.SCRIPT_BODY);
+            body = findChildByType(VueTypes.SCRIPT_CODE);
         }
         return body;
     }

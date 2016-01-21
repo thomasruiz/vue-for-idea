@@ -19,8 +19,11 @@ import com.intellij.psi.TokenType;
 
 CRLF= \n|\r|\r\n
 WHITE_SPACE=[\ \t\f]
-TAG_START="<template * >"
+TAGS="template"|"style"|"script"
 
-%state WAITING_VALUE
+IDENTIFIER = [a-zA-Z_][a-zA-Z0-9_]*
+
+STRING = \"([^\"\r\n\\]|\\.)*\" | '([^'\r\n\\]|\\.)*'
+
 
 %%
