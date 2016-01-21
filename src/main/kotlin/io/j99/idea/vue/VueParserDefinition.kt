@@ -7,6 +7,7 @@ import com.intellij.openapi.project.Project
 import com.intellij.psi.FileViewProvider
 import com.intellij.psi.PsiElement
 import com.intellij.psi.PsiFile
+import io.j99.idea.vue.lexer.LexerAdapter
 import io.j99.idea.vue.psi.VueFile
 
 /**
@@ -18,7 +19,7 @@ class VueParserDefinition : com.intellij.lang.xhtml.XHTMLParserDefinition() {
     }
 
     override fun createLexer(p0: Project?): Lexer {
-//        return FlexAdapter(_VueLexter())
+//        return LexerAdapter()
         return super.createLexer(p0)
     }
 

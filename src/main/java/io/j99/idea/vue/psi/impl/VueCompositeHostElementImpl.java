@@ -6,6 +6,7 @@ import com.intellij.psi.LiteralTextEscaper;
 import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiLanguageInjectionHost;
 import io.j99.idea.vue.VueTypes;
+import io.j99.idea.vue.psi.VueTagName;
 import org.jetbrains.annotations.NotNull;
 
 /**
@@ -15,20 +16,16 @@ public abstract class VueCompositeHostElementImpl extends ASTWrapperPsiElement i
     public VueCompositeHostElementImpl(@NotNull ASTNode astNode) {
         super(astNode);
     }
-
+    public String getLang(){
+        return "";
+    }
     @Override
     public boolean isValidHost() {
 //        return getCodeBlock()!=null;
         return true;
     }
     private PsiElement getCodeBlock(){
-        PsiElement body = findChildByType(VueTypes.TEMPLATE_CODE);
-        if(body==null){
-            body = findChildByType(VueTypes.STYLE_CODE);
-        }
-        if(body==null){
-            body = findChildByType(VueTypes.SCRIPT_CODE);
-        }
+        PsiElement body = findChildByType(VueTypes.BODY_CODE);
         return body;
     }
     @Override

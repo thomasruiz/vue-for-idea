@@ -25,5 +25,8 @@ IDENTIFIER = [a-zA-Z_][a-zA-Z0-9_]*
 
 STRING = \"([^\"\r\n\\]|\\.)*\" | '([^'\r\n\\]|\\.)*'
 
+%state WAITING_VALUE
+%state IN_BAD
 
 %%
+.                               { yybegin(IN_BAD); return com.intellij.psi.TokenType.BAD_CHARACTER; }
