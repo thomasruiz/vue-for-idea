@@ -33,6 +33,10 @@
   <depends>com.intellij.modules.xml</depends>
   <depends>com.intellij.modules.lang</depends>
   <depends>JavaScript</depends>
+  <depends>org.coffeescript</depends>
+  <depends>org.jetbrains.plugins.sass</depends>
+  <depends>org.jetbrains.plugins.less</depends>
+  <depends>org.jetbrains.plugins.stylus</depends>
   <project-components>
     <component>
       <implementation-class>io.j99.idea.vue.component.VueComponent</implementation-class>

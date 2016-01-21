@@ -2,8 +2,8 @@
     parserClass='io.j99.idea.vue.parser.VueParser'
     implements='io.j99.idea.vue.psi.VueCompositeElement'
     extends='io.j99.idea.vue.psi.impl.VueCompositeElementImpl'
-    extends("body_code")='io.j99.idea.vue.psi.impl.VueCompositeHostElementImpl'
-
+    extends("code")='io.j99.idea.vue.psi.impl.VueCompositeHostElementImpl'
+    implements("code")="com.intellij.psi.PsiLanguageInjectionHost"
     elementTypeHolderClass='io.j99.idea.vue.VueTypes'
     elementTypeClass='io.j99.idea.vue.psi.VueCompositeElementType'
     tokenTypeClass='io.j99.idea.vue.psi.VueTokenType'
@@ -13,6 +13,7 @@
     psiImplPackage='io.j99.idea.vue.psi.impl'
 }
 private root::=tags
-tags    ::='<' tagName ' lang=' lang '>' body_code '</' tagName '>'
-tagName ::=
-body_code ::=
+tags    ::='<' tagName ' ' langArr? '>' code '</' tagName '>'
+private langArr::= 'lang=' lang
+lang::=
+code ::=
