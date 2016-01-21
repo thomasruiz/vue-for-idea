@@ -1,0 +1,28 @@
+{
+    parserClass='io.j99.idea.vue.parser.VueParser'
+    implements='io.j99.idea.vue.psi.VueCompositeElement'
+    extends='io.j99.idea.vue.psi.impl.VueCompositeElementImpl'
+    extends("(template|style|script)_body")='io.j99.idea.vue.psi.impl.VueCompositeHostElementImpl'
+
+    elementTypeHolderClass='io.j99.idea.vue.VueTypes'
+    elementTypeClass='io.j99.idea.vue.psi.VueCompositeElementType'
+    tokenTypeClass='io.j99.idea.vue.psi.VueTokenType'
+    psiClassPrefix='Vue'
+    psiImplClassSuffix='Impl'
+    psiPackage='io.j99.idea.vue.psi'
+    psiImplPackage='io.j99.idea.vue.psi.impl'
+}
+private root::= template style script
+private template::= template_start template_body template_end
+private style::= style_start style_body style_end
+private script::= script_start script_body script_end
+
+style_end ::=
+style_body ::=
+style_start ::=
+template_end ::=
+template_body ::=
+template_start ::=
+script_end ::=
+script_body ::=
+script_start ::=

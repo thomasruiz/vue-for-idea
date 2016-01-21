@@ -5,5 +5,5 @@ import com.intellij.psi.PsiElement;
 /**
  * Created by android on 1/14/16.
  */
-public interface VueElement extends PsiElement {
+public interface VueCompositeElement extends PsiElement {
 }
