@@ -12,6 +12,9 @@ Requires Instation [node](https://nodejs.org) and [vue-cli](https://github.com/v
 - [ ] new project and new module
 - [ ] other feature
 
+![image](https://raw.githubusercontent.com/henjue/vue-for-idea/master/images/4.png)
+
+![image](https://raw.githubusercontent.com/henjue/vue-for-idea/master/images/5.png)
 
 ![image](https://raw.githubusercontent.com/henjue/vue-for-idea/master/images/2.png)
 
@@ -24,3 +27,4 @@ Requires Instation [node](https://nodejs.org) and [vue-cli](https://github.com/v
 
 * 20151212:
     Syntax checking and highlighting Using HTML
+
