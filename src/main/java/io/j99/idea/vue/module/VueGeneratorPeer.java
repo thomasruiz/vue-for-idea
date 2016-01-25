@@ -167,7 +167,7 @@ public class VueGeneratorPeer implements WebProjectGenerator.GeneratorPeer<VuePr
     private void loadVueTemplateList() {
         myLoadingTemplatesPanel.setVisible(true);
         myLoadedTemplatesPanel.setVisible(false);
-        AsyncProcessIcon asyncProcessIcon=new AsyncProcessIcon("Vue Template loading");
+        final AsyncProcessIcon asyncProcessIcon=new AsyncProcessIcon("Vue Template loading");
         myLoadingTemplatesPanel.add(asyncProcessIcon,new GridConstraints());
         asyncProcessIcon.resume();
         ApplicationManager.getApplication().executeOnPooledThread(new Runnable() {
@@ -260,7 +260,7 @@ public class VueGeneratorPeer implements WebProjectGenerator.GeneratorPeer<VuePr
     }
 
     @Override
-    public void addSettingsStateListener(@NotNull WebProjectGenerator.SettingsStateListener stateListener) {
+    public void addSettingsStateListener(@NotNull final WebProjectGenerator.SettingsStateListener stateListener) {
         nodePathTextWithBrowse.getTextField().getDocument().addDocumentListener(new DocumentAdapter() {
             protected void textChanged(final DocumentEvent e) {
                 stateListener.stateChanged(validate() == null);

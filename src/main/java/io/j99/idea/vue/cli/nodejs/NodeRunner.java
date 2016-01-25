@@ -60,10 +60,10 @@ public final class NodeRunner {
      * @throws ExecutionException
      */
     @NotNull
-    public static ProcessOutput execute(@NotNull GeneralCommandLine commandLine,ProcessListener listener, int timeoutInMilliseconds) throws ExecutionException {
+    public static ProcessOutput execute(@NotNull final GeneralCommandLine commandLine,final ProcessListener listener, int timeoutInMilliseconds) throws ExecutionException {
         LOG.info("Running node command: " + commandLine.getCommandLineString());
         Process process = commandLine.createProcess();
-        OSProcessHandler processHandler = new ColoredProcessHandler(process, commandLine.getCommandLineString(), Charsets.UTF_8);
+        final OSProcessHandler processHandler = new ColoredProcessHandler(process, commandLine.getCommandLineString(), Charsets.UTF_8);
         final ProcessOutput output = new ProcessOutput();
         processHandler.addProcessListener(new ProcessAdapter() {
             public void onTextAvailable(ProcessEvent event, Key outputType) {
